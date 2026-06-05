@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Plus, Wallet } from "lucide-react";
+import { Plus, CreditCard } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -167,8 +167,8 @@ export function ExpenseDashboard() {
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-              <Wallet className="h-5 w-5" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100 text-blue-950">
+              <CreditCard className="h-5 w-5" />
             </div>
             <div>
               <h1 className="text-xl font-bold tracking-tight">
