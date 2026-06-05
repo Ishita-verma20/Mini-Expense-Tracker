@@ -181,7 +181,7 @@ export function ExpenseDashboard() {
           </div>
           <div className="flex gap-2">
             <BudgetSettings budgets={budgets} onRefresh={fetchData} />
-            <Button className="gap-2" onClick={openAdd}>
+            <Button className="gap-2 bg-blue-100 text-blue-950 hover:bg-blue-200" onClick={openAdd}>
               <Plus className="h-4 w-4" />
               Add Expense
             </Button>
