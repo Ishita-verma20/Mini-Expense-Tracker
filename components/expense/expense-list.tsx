@@ -1,7 +1,7 @@
 "use client";
 
 import { format } from "date-fns";
-import { Edit3, Trash2, AlertTriangle } from "lucide-react";
+import { Edit3, Trash, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatINR } from "@/lib/currency";
@@ -83,7 +83,7 @@ export function ExpenseList({
                 onClick={() => onDelete(expense)}
                 aria-label="Delete expense"
               >
-                <Trash2 className="h-4 w-4 text-destructive" />
+                <Trash className="h-4 w-4 text-destructive" />
               </Button>
             </div>
           </div>
