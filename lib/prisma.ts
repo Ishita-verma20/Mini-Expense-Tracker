@@ -6,10 +6,16 @@ const globalForPrisma = globalThis as unknown as {
 };
 
 function createPrismaClient() {
-  const adapter = new PrismaBetterSqlite3({
-    url: process.env.DATABASE_URL ?? "file:./dev.db",
-  });
-  return new PrismaClient({ adapter });
+  const dbUrl = process.env.DATABASE_URL ?? "file:./dev.db";
+
+  // If using a file-based SQLite URL, use the better-sqlite3 adapter for performance.
+  if (dbUrl.startsWith("file:")) {
+    const adapter = new PrismaBetterSqlite3({ url: dbUrl });
+    return new PrismaClient({ adapter });
+  }
+
+  // For other databases (e.g. Postgres), override the datasource at runtime.
+  return new PrismaClient({ datasources: { db: { url: dbUrl } } });
 }
 
 export const prisma = globalForPrisma.prisma ?? createPrismaClient();
