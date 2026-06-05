@@ -18,8 +18,9 @@ High-level steps
    - Ensure `NODE_ENV` is set to `production` (Vercel sets this automatically on production deploys).
 
 3) Update Prisma provider before pushing production schema
-   - Edit `prisma/schema.prisma` and change `provider = "sqlite"` to `provider = "postgresql"`.
+   - Edit `prisma/schema.prisma` and ensure `provider = "postgresql"`.
    - Commit that change.
+   - Set `DATABASE_URL` in your local `.env` to your Render Postgres connection string when testing locally.
 
 4) Push and deploy on Vercel
    - Push your branch to GitHub; Vercel will build and deploy the app automatically.
